@@ -3,7 +3,7 @@
 
 int main(int argc, char **argv) {
   if (argc != 2) {
-    fprintf(stderr, "引數數量錯誤\n");
+    fprintf(stderr, "Wrong number of arguments\n");
     return 1;
   }
 

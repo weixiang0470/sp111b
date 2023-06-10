@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# My gitignore
+*~
+*.o
+tmp*
+wwx01
