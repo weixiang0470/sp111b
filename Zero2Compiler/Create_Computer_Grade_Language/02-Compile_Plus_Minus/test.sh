@@ -3,8 +3,7 @@ try() {
     expected="$1"
     input="$2"
 
-    #gcc -o wwx01 wwx01.c
-    ./wwx01 "$input" > tmp.s
+    ./wwx02 "$input" > tmp.s
     gcc -o tmp tmp.s
     ./tmp
     actual="$?"
@@ -17,6 +16,7 @@ try() {
     fi
 }
 
+try 21 "5+20-4"
 try 0 0
 try 42 42
 
