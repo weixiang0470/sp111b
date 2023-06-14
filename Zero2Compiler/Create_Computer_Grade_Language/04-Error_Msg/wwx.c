@@ -25,6 +25,8 @@ struct Token{
 //Processing token
 Token *token;
 
+//Function to handle error
+//Take the same arguments as printf
 void error(char *fmt, ...){
     va_list ap;
     va_start(ap, fmt);
@@ -36,16 +38,16 @@ void error(char *fmt, ...){
 //to store user input
 char *user_input;
 
-//Function to handle error
+//Function to handle error happens at which column
 //Take the same arguments as printf
 void error_at(char *loc,char *fmt, ...){
     va_list ap;
     va_start(ap, fmt);
-    int pos = loc - user_input;
-    fprintf(stderr,"%s\n", user_input);
+    int pos = loc - user_input;//find out error at which bit
+    fprintf(stderr,"%s\n", user_input);//print out user_input 
     //fprintf(stderr,"\nusr=%d", user_input);
     //fprintf(stderr,"\npos=%d", pos);
-    fprintf(stderr,"%*s",pos, ""); //print number of pos spaces
+    fprintf(stderr,"%*s",pos, ""); //print number of pos's spaces
     fprintf(stderr,"^ ");
     vfprintf(stderr, fmt, ap);
     fprintf(stderr, "\n");
